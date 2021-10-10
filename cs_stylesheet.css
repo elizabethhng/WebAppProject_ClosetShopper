@@ -33,14 +33,34 @@ header {
     min-width: 800px;
 } 
 
-footer {background-color: #ECCBBA;
-    color:#000000;
-    font-size:70%;
-    text-align: center;
-    clear: right;
-    padding:10px;
+footer{background-color: #ECCBBA;
+      color: #555555; padding: 5px;}
 
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+  }
+  
+footer li {
+    margin: 0;
+    padding: 0;
+    display: block;
 }
+  
+footer li a {
+    display: block;
+    color: #555555;
+    text-align: center;
+    margin: 5px 17px ;
+    padding: 8px;
+    font-size: 10px;
+    text-decoration: none;
+  }
 
 
 /*Content Box */
