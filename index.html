@@ -6,35 +6,50 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
-<style>
-
-</style>
 <body>
 
 
 <div id="wrapper">
-       <div id="banner">
-            <p>banner goes here</p>
-        </div>
-        <header>
-     
-    <nav>
+    <!-- Announcement banner -->
+<div id="banner">
+    <h9>banner goes here</h9>
+</div>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+    <!-- Centered link -->
+    <div class="topnav-centered">
+        <a href=".html"><img src="media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
+    </div>
+  
+    <!-- Left-aligned links (default) -->
+    <div class="topnav-left">
         <ul>
             <li><a href=".html"><strong>ABOUT US</strong></a></li>
-            <li><a href=".html"><strong>SHOP ALL CATEGORIES</strong></a></li>
+              <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><strong>SHOP ALL CATEGORIES</strong></a>
+                    <div class="dropdown-content">
+                      <a href="#">Link 1</a>
+                      <a href="#">Link 2</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </li>
         </ul>
-        <a href=".html"><img src="media\logo.png" width="195px" height="35px"   alt="logo" style="float:center;" ></a>
-        <ul>
-            <li><a href=".html"><strong>CART</strong></a></li>
-            <li><a href=".html"><strong>PROFILE PAGE</strong></a></li>
-        </ul>
-    </nav>
-    </header>
+        
+    </div>
 
-
+  
+    <!-- Right-aligned links -->
+    <div class="topnav-right">
+        <a href=".html"><img src="media\cart_icon.png" width="13px" height="13px" alt="cart_icon" ><strong> CART</strong></a>
+        <a href=".html"><strong>PROFILE PAGE</strong></a>
+    </div>
+  
+</div>
     <div id="leftcolumn">
 
-    </div>
+</div>
 
     <div id="rightcolumn">
         <div class="content">
