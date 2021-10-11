@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The Closet Shopper - About Us</title>
+<title>The Closet Shopper - BOTTOMS</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
 <link rel="stylesheet" href="cs_stylesheet.css">
@@ -46,7 +46,7 @@
     </div>
 
     <div class="content">
-        <p>about us</p>
+        <p>BOTTOMS</p>
     </div>
 
 
