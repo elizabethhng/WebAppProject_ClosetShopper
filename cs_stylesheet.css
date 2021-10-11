@@ -3,7 +3,7 @@ body { font-family: "Roboto",Arial,sans-serif;
 }
 #banner { 
     background-color:#ACACAC;
-    min-width:800px;
+    min-width:900px;
     height:20px;
     float:top;
     text-align: center;
@@ -13,12 +13,13 @@ body { font-family: "Roboto",Arial,sans-serif;
 
 #wrapper { 
     background-color:#ffffff;
-    min-width:800px;
+    min-width:900px;
     width:100%;
 } 
 
 footer{background-color: #ECCBBA;
-      color: #555555; padding: 5px;}
+      color: #555555; 
+      width: 100%;}
 
 footer ul {
     list-style-type: none;
@@ -42,13 +43,13 @@ footer li a {
     text-align: center;
     margin: 5px 17px ;
     padding: 8px;
-    font-size: 10px;
+    font-size: 14px;
     text-decoration: none;
   }
 
 
 /*Content Box */
-.content {padding: 10px 40px 10px 20px; min-width:800px;} 
+.content {padding: 10px 40px 10px 20px; min-width:900px;} 
 /* .content {padding: 20px 20px 20px 20px;}   */
 .content table{padding: 20px 20px 20px 20px ; margin:auto;}
 
@@ -65,9 +66,9 @@ footer li a {
     float: left;
     color: #333333;
     text-align: center;
-    padding: 16px;
+    padding: 16px 25px;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 20px;
 
   }
@@ -90,15 +91,16 @@ footer li a {
     float: right;
   }
 
-  /* Right-aligned section inside the top navigation */
+  /* left-aligned section inside the top navigation */
   .topnav-left {
-    float: left;
+
+
   }
     .dropbtn {
       background-color: #ECCBBA;
       color: #333333;
       padding: 16px;
-      font-size: 13px;
+      font-size: 14px;
       border: none;
       font-family: "Roboto",Arial,sans-serif;
       line-height: 20px;
