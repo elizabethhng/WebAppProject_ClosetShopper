@@ -46,6 +46,11 @@
     </div>
 
     <div class="content">
+    <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Profile Page</li>
+            <hr style="margin-top:5px;">
+    </ul>
         <p>Profile</p>
     </div>
 
