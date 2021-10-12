@@ -22,6 +22,9 @@
     th{
         font-size: 14px;
     }
+    input{
+        padding: 5px;
+    }
 </style>
 
 <div id="wrapper">
@@ -70,19 +73,17 @@
             </tr>
             <tr>
                 <td>
-                    <input type="email" name="Email"  id="Email" size=20 required placeholder = "Enter your registered email address." pattern ="^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$"><br><br>
+                    <input type="email" name="Email"  id="Email" size=40 required placeholder = "Enter your registered email address." pattern ="^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$"><br><br>
                 </td>
             </tr>
             <tr>
                 <th><label for="Email">PASSWORD&ast;</label></th>
             </tr>
             <tr>
-                <th>
-                <input type="email" name="Email"  id="Email" size=20 required placeholder = "Enter your Email-ID here" pattern ="^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$"><br><br>
-                </th>
+                <td>
+                <input type="password" size=40 placeholder="Enter Your Password" name="psw" required></td>
             </tr>
             <tr><td><button id="Submit" type="submit" >LOGIN</button></td></tr>
-                
         </table>
 
 	</form>	
