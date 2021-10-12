@@ -73,7 +73,7 @@
         
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <table id = "signin_form">
-            <tr><th><h2>SIGN IN</h2></th></tr>
+            <tr><th><h2>SIGN IN</h2><br></th></tr>
             <div class="form-group">
             <tr>
                 <th><label for="Email">EMAIL&ast;<br></label></th>
@@ -100,7 +100,7 @@
         </table>
 
         <table id = "register_form">
-            <tr><th><h2>REGISTER</h2></th></tr>
+            <tr><th><h2>REGISTER</h2><br></th></tr>
            
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
