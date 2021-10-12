@@ -23,7 +23,7 @@ p{
 
 #banner { 
     background-color:#ACACAC;
-    min-width:900px;
+    min-width:905px;
     height:20px;
     float:top;
     text-align: center;
@@ -33,7 +33,7 @@ p{
 
 #wrapper { 
     background-color:#ffffff;
-    min-width:900px;
+    min-width:905px;
     width:100%;
 } 
 
@@ -80,7 +80,7 @@ footer li a {
 
 
 /*Content Box */
-.content {padding: 10px 20px 30px 20px; min-width:900px;} 
+.content {padding: 10px 20px 30px 20px; min-width:905px;} 
 /* .content {padding: 20px 20px 20px 20px;}   */
 .content table{padding: 20px 20px 20px 20px ; margin:auto;}
 
