@@ -14,7 +14,9 @@
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
-        <h9>banner goes here</h9>
+        <div class="myBanner fade">New Collections Arrive every Thursday!</div>
+        <div class="myBanner fade">10% off for CSBank members</div>
+        <div class="myBanner fade">Free Delivery on all orders</div>
     </div>
 
     <!-- Top navigation -->
