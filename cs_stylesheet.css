@@ -150,7 +150,11 @@ footer li a {
   width: 100%;
 }
 
-.homepage td{
+.homepage td {
   text-align: center;
   color: #555555;
+}
+.homepage a {
+  color: #333333;
+  text-decoration: none;
 }
