@@ -13,7 +13,6 @@ p{
   margin: auto;
   text-align: center;
   font-size: 12px;
-  color: #555555;
 }
 
 #banner { 
@@ -153,4 +152,5 @@ footer li a {
 
 .homepage td{
   text-align: center;
+  color: #555555;
 }
