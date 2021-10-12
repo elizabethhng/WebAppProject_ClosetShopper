@@ -7,7 +7,22 @@
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
-
+<style>
+    .content{
+        min-height: 500px;
+    }
+    table{
+        text-align:left;
+    }
+    #signin_form{
+        float: left;
+        padding: 15px;
+        margin-bottom: 24px;
+    }
+    th{
+        font-size: 14px;
+    }
+</style>
 
 <div id="wrapper">
     <!-- Announcement banner -->
@@ -46,9 +61,32 @@
     </div>
 
     <div class="content">
-        <p>login</p>
-    </div>
+        <hr>
+    <form method="post" action="">
+        <table id = "signin_form">
+            <tr><th><h2>SIGN IN</h2></th></tr>
+            <tr>
+                <th><label for="Email">EMAIL&ast;<br></label></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="email" name="Email"  id="Email" size=20 required placeholder = "Enter your registered email address." pattern ="^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="Email">PASSWORD&ast;</label></th>
+            </tr>
+            <tr>
+                <th>
+                <input type="email" name="Email"  id="Email" size=20 required placeholder = "Enter your Email-ID here" pattern ="^([\w\.-])+@([\w]+\.){1,3}([A-z]){2,3}$"><br><br>
+                </th>
+            </tr>
+            <tr><td><button id="Submit" type="submit" >LOGIN</button></td></tr>
+                
+        </table>
 
+	</form>	
+    </div>
 
     <footer>
         <ul>

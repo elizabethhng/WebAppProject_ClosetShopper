@@ -8,6 +8,12 @@ h1{
   color: #333333;
   text-align: center;
 }
+h2{
+  font-size: 16px;
+  font-weight: normal;
+  width: 100%;
+  color: #333333;
+}
 
 p{
   margin: auto;
@@ -30,6 +36,17 @@ p{
     min-width:900px;
     width:100%;
 } 
+
+button {
+  background-color: #333333;
+  color: white;
+  padding:10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font: "Roboto";
+}
 
 footer{background-color: #ECCBBA;
       color: #555555; 
@@ -113,6 +130,7 @@ footer li a {
   color: #333333;
   padding: 16px;
   font-size: 14px;
+  margin: 0;
   border: none;
   font-family: "Roboto",Arial,sans-serif;
   line-height: 20px;
