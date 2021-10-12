@@ -4,6 +4,8 @@
 <title>The Closet Shopper - Top</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="script/css/cs_stylesheet_category.css">
+<link rel="stylesheet" href="script/css/cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
@@ -12,7 +14,9 @@
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
-        <h9>banner goes here</h9>
+        <div class="myBanner fade">New Collections Arrive every Thursday!</div>
+        <div class="myBanner fade">10% off for CSBank members</div>
+        <div class="myBanner fade">Free Delivery on all orders</div>
     </div>
 
     <!-- Top navigation -->
@@ -46,12 +50,29 @@
     </div>
 
     <div class="content">
-    <ul class="breadcrumb">
+        <ul class="breadcrumb">
             <li><a href="index.html">Home</a></li>
             <li>tops</li>
             <hr style="margin-top:5px;">
-    </ul>
-        <p>TOPS</p>
+        </ul>
+        <h1>TOPS</h1>
+        <table class="category">
+            <tr>
+                <td><img src="media/tops/1.jpg"></td>
+                <td><img src="media/tops/2.jpg"></td>
+                <td><img src="media/tops/3.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="media/tops/4.jpg"></td>
+                <td><img src="media/tops/5.jpg"></td>
+                <td><img src="media/tops/6.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="media/tops/7.jpg"></td>
+                <td><img src="media/tops/8.jpg"></td>
+                <td><img src="media/tops/9.jpg"></td>
+            </tr>
+        </table>
     </div>
 
 
@@ -66,6 +87,9 @@
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
+
+<script type="text/javascript" src="script/javascript/slide_show.js"></script>
+<script>banner_showSlides();</script>
 
 </body>
 </html>

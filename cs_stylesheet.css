@@ -152,6 +152,12 @@ footer li a {
 
 .homepage td {
   text-align: center;
+  color: #333333;
+}
+
+.homepage a {
+  color: #333333;
+  text-decoration: none;
 }
 
 /* Breadcrumbs Bar */
@@ -188,3 +194,4 @@ ul.breadcrumb li a:hover {
   color: #555555;
   text-decoration: underline;
 }
+
