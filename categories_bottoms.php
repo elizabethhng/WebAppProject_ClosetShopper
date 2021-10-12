@@ -46,6 +46,11 @@
     </div>
 
     <div class="content">
+    <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>bottoms</li>
+            <hr style="margin-top:5px;">
+    </ul>
         <p>BOTTOMS</p>
     </div>
 
