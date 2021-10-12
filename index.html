@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <title>The Closet Shopper - Home</title>
+
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
 <link rel="stylesheet" href="cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
-
 </head>
 <body>
 
@@ -14,7 +14,9 @@
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
-        <h9>banner goes here</h9>
+        <div class="myBanner fade">New Collections Arrive every Thursday!</div>
+        <div class="myBanner fade">10% off for CSBank members</div>
+        <div class="myBanner fade">Free Delivery on all orders</div>
     </div>
 
     <!-- Top navigation -->
@@ -70,18 +72,17 @@
         </div>
         <table class='homepage'>
             <tr>
-                <td><img src="media/slideshow/top.png"></td>
-                <td><img src="media/slideshow/bag.png"></td>
-                <td><img src="media/slideshow/bottom.png"></td>
+                <td><a href="categories_top.php"><img src="media/slideshow/top.png"></a></td>
+                <td><a href="categories_bag.php"><img src="media/slideshow/bag.png"></a></td>
+                <td><a href="categories_bottoms.php"><img src="media/slideshow/bottom.png"></a></td>
             </tr>
             <tr>
-                <td>TOPS</td>
-                <td>BOTTOMS</td>
-                <td>BAGS</td>
+                <td><a href="categories_top.php">TOPS</a></td>
+                <td><a href="categories_bottoms.php">BOTTOMS</a></td>
+                <td><a href="categories_bag.php">BAGS</a></td>
             </tr>
         </table>
     </div>
-
 
     <footer>
         <ul>
@@ -94,26 +95,8 @@
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
-<script>
-    var slideIndex = 0;
-    showSlides();
-    
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 5000); // Change image every 2 seconds
-    }
-</script>
+
+<script type="text/javascript" src="script/javascript/slide_show.js"></script>
+
 </body>
 </html>
