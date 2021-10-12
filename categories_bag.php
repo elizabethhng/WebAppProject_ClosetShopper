@@ -4,6 +4,8 @@
 <title>The Closet Shopper - Bags</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="script/css/cs_stylesheet_category.css">
+<link rel="stylesheet" href="script/css/cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
@@ -46,12 +48,29 @@
     </div>
 
     <div class="content">
-    <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li>bags</li>
-            <hr style="margin-top:5px;">
-    </ul>
-        <p>BAG</p>
+        <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li>bags</li>
+                <hr style="margin-top:5px;">
+        </ul>
+        <h1>BAGS</h1>
+        <table class="category">
+            <tr>
+                <td><img src="media/bags/1.jpg"></td>
+                <td><img src="media/bags/2.jpg"></td>
+                <td><img src="media/bags/3.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="media/bags/4.jpg"></td>
+                <td><img src="media/bags/5.jpg"></td>
+                <td><img src="media/bags/6.jpg"></td>
+            </tr>
+            <tr>
+                <td><img src="media/bags/7.jpg"></td>
+                <td><img src="media/bags/8.jpg"></td>
+                <td><img src="media/bags/9.jpg"></td>
+            </tr>
+        </table>
     </div>
 
 
@@ -66,6 +85,9 @@
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
+
+<script type="text/javascript" src="script/javascript/slide_show.js"></script>
+<script>banner_showSlides();</script>
 
 </body>
 </html>
