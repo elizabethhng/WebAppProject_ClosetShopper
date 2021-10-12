@@ -1,6 +1,4 @@
 var slideIndex = 0;
-showSlides();
-banner_showSlides();
 
 function showSlides() {
   var i;
@@ -18,6 +16,7 @@ function showSlides() {
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 5000); // Change image every 2 seconds
 }
+
 function banner_showSlides() {
     var i;
     var slides = document.getElementsByClassName("myBanner");
