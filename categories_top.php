@@ -1,3 +1,6 @@
+<?php 
+include "script/php/categories_create_table.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,6 @@
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
-
 
 <div id="wrapper">
     <!-- Announcement banner -->
@@ -74,7 +76,6 @@
             </tr>
         </table>
     </div>
-
 
     <footer>
         <ul>
