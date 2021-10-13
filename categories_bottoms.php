@@ -1,6 +1,6 @@
 <?php 
 include "script/php/categories_create_table.php";
-include "script/php/fetch_product_details.php";
+include "script/php/display_product.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,51 +61,27 @@ include "script/php/fetch_product_details.php";
         </ul>
         <h1>BOTTOMS</h1>
         <table class="category">
-            <tr>
+            <tr><!--Product Image-->
                 <td><img src="media/bottoms/1.jpg"></td>
                 <td><img src="media/bottoms/2.jpg"></td>
                 <td><img src="media/bottoms/3.jpg"></td>
             </tr>
-            <tr>
-                <th><?php insert_name(10); ?></th>
-                <th><?php insert_name(11); ?></th>
-                <th><?php insert_name(12); ?></th>
-            </tr>
-            <tr>
-                <td style="padding: 1%;">$<?php insert_price(10); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(11); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(12); ?></td>
-            <tr>
-            <tr>
+            <tr><?php generate_name_table(10); ?></tr>
+            <tr><?php generate_price_table(10); ?></tr>
+            <tr><!--Product Image-->
                 <td><img src="media/bottoms/4.jpg"></td>
                 <td><img src="media/bottoms/5.jpg"></td>
                 <td><img src="media/bottoms/6.jpg"></td>
             </tr>
-            <tr>
-                <th><?php insert_name(13); ?></th>
-                <th><?php insert_name(14); ?></th>
-                <th><?php insert_name(15); ?></th>
-            </tr>
-            <tr>
-                <td style="padding: 1%;">$<?php insert_price(13); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(14); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(15); ?></td>
-            <tr>
-            <tr>
+            <tr><?php generate_name_table(13); ?></tr>
+            <tr><?php generate_price_table(13); ?></tr>
+            <tr><!--Product Image-->
                 <td><img src="media/bottoms/7.jpg"></td>
                 <td><img src="media/bottoms/8.jpg"></td>
                 <td><img src="media/bottoms/9.jpg"></td>
             </tr>
-            <tr>
-                <th><?php insert_name(16); ?></th>
-                <th><?php insert_name(17); ?></th>
-                <th><?php insert_name(18); ?></th>
-            </tr>
-            <tr>
-                <td style="padding: 1%;">$<?php insert_price(16); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(17); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(18); ?></td>
-            <tr>
+            <tr><?php generate_name_table(16); ?></tr>
+            <tr><?php generate_price_table(16); ?></tr>
         </table>
     </div>
 

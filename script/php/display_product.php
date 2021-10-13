@@ -1,6 +1,7 @@
 <?php
+include "script/php/fetch_product_details.php";
+
 function generate_name_table($id){
-    include "script/php/fetch_product_details.php";
     echo "<th>";
     echo insert_name($id);
     echo "</th>";
@@ -10,9 +11,9 @@ function generate_name_table($id){
     echo "<th>";
     echo insert_name($id+2);
     echo "</th>";
+}
 
-    echo "<tr>";
-
+function generate_price_table($id){
     echo "<td style='padding: 1%;'>";
     echo "$";
     echo insert_price($id);
