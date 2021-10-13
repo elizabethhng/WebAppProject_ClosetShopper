@@ -7,7 +7,15 @@
 .category td {
   text-align: center;
   color: #555555;
-  padding: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
+
+.category th {
+  text-align: center;
+  color: #333333;
 }
 
 .category a {

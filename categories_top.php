@@ -1,5 +1,6 @@
 <?php 
 include "script/php/categories_create_table.php";
+include "script/php/fetch_product_details.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,15 +66,45 @@ include "script/php/categories_create_table.php";
                 <td><img src="media/tops/3.jpg"></td>
             </tr>
             <tr>
+                <th><?php insert_name(1); ?></th>
+                <th><?php insert_name(2); ?></th>
+                <th><?php insert_name(3); ?></th>
+            </tr>
+            <tr>
+                <td style="padding: 1%;">$<?php insert_price(1); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(2); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(3); ?></td>
+            <tr>
+            <tr>
                 <td><img src="media/tops/4.jpg"></td>
                 <td><img src="media/tops/5.jpg"></td>
                 <td><img src="media/tops/6.jpg"></td>
             </tr>
             <tr>
+                <th><?php insert_name(4); ?></th>
+                <th><?php insert_name(5); ?></th>
+                <th><?php insert_name(6); ?></th>
+            </tr>
+            <tr>
+                <td style="padding: 1%;">$<?php insert_price(4); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(5); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(6); ?></td>
+            <tr>
+            <tr>
                 <td><img src="media/tops/7.jpg"></td>
                 <td><img src="media/tops/8.jpg"></td>
                 <td><img src="media/tops/9.jpg"></td>
             </tr>
+            <tr>
+                <th><?php insert_name(7); ?></th>
+                <th><?php insert_name(8); ?></th>
+                <th><?php insert_name(9); ?></th>
+            </tr>
+            <tr>
+                <td style="padding: 1%;">$<?php insert_price(7); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(8); ?></td>
+                <td style="padding: 1%;">$<?php insert_price(9); ?></td>
+            <tr>
         </table>
     </div>
 
