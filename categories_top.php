@@ -1,6 +1,6 @@
 <?php 
 include "script/php/categories_create_table.php";
-include "script/php/fetch_product_details.php";
+include "script/php/display_product.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,31 +65,13 @@ include "script/php/fetch_product_details.php";
                 <td><img src="media/tops/2.jpg"></td>
                 <td><img src="media/tops/3.jpg"></td>
             </tr>
-            <tr>
-                <th><?php insert_name(1); ?></th>
-                <th><?php insert_name(2); ?></th>
-                <th><?php insert_name(3); ?></th>
-            </tr>
-            <tr>
-                <td style="padding: 1%;">$<?php insert_price(1); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(2); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(3); ?></td>
-            <tr>
+            <tr><?php generate_name_table(1); ?></tr>
             <tr>
                 <td><img src="media/tops/4.jpg"></td>
                 <td><img src="media/tops/5.jpg"></td>
                 <td><img src="media/tops/6.jpg"></td>
             </tr>
-            <tr>
-                <th><?php insert_name(4); ?></th>
-                <th><?php insert_name(5); ?></th>
-                <th><?php insert_name(6); ?></th>
-            </tr>
-            <tr>
-                <td style="padding: 1%;">$<?php insert_price(4); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(5); ?></td>
-                <td style="padding: 1%;">$<?php insert_price(6); ?></td>
-            <tr>
+            <tr><?php generate_name_table(4); ?></tr>
             <tr>
                 <td><img src="media/tops/7.jpg"></td>
                 <td><img src="media/tops/8.jpg"></td>
@@ -125,3 +107,5 @@ include "script/php/fetch_product_details.php";
 
 </body>
 </html>
+
+
