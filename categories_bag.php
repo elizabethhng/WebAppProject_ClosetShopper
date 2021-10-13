@@ -61,25 +61,15 @@ include "script/php/display_product.php";
         </ul>
         <h1>BAGS</h1>
         <table class="category">
-            <tr><!--Product Image-->
-                <td><img src="media/bags/1.jpg"></td>
-                <td><img src="media/bags/2.jpg"></td>
-                <td><img src="media/bags/3.jpg"></td>
-            </tr>
+            <tr><?php generate_image_table(19); ?></tr>
             <tr><?php generate_name_table(19); ?></tr>
             <tr><?php generate_price_table(19); ?></tr>
-            <tr><!--Product Image-->
-                <td><img src="media/bags/4.jpg"></td>
-                <td><img src="media/bags/5.jpg"></td>
-                <td><img src="media/bags/6.jpg"></td>
-            </tr>
+
+            <tr><?php generate_image_table(22); ?></tr>
             <tr><?php generate_name_table(22); ?></tr>
             <tr><?php generate_price_table(22); ?></tr>
-            <tr><!--Product Image-->
-                <td><img src="media/bags/7.jpg"></td>
-                <td><img src="media/bags/8.jpg"></td>
-                <td><img src="media/bags/9.jpg"></td>
-            </tr>
+
+            <tr><?php generate_image_table(25); ?></tr>
             <tr><?php generate_name_table(25); ?></tr>
             <tr><?php generate_price_table(25); ?></tr>
         </table>
