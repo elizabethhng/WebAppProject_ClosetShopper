@@ -8,6 +8,37 @@
 </head>
 <body>
 
+<style>
+    #userDetails{
+        float: left;
+        padding-left: 35px;
+
+    }
+    #logout{
+        float: right;
+        margin-right: 35px;
+
+    }
+    .content{
+        min-height: 500px;
+    }
+    #orderTable{
+        margin:auto;
+        margin-top: 100px;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+
+    }
+    #orders{
+        padding:0px 33px;
+    }
+    tr{
+        border-bottom: 1px solid #b9b9b9;
+    }
+
+</style>
+
 
 <div id="wrapper">
     <!-- Announcement banner -->
@@ -51,7 +82,25 @@
             <li>Profile Page</li>
             <hr style="margin-top:5px;">
     </ul>
-        <p>Profile</p>
+        <h1>Profile Page</h1>
+        <!-- user information -->
+        <div id="userDetails">
+            <h3><b>User Email:</b> USER@eee.com</h3>
+            <h3><b>Shipping Address:</b> 123 Nanyang St 10</h3>
+        </div>
+        <!-- Logout Button -->
+        <button id="logout" type="submit" >LOGOUT</button>
+        <!-- Order table -->
+        <div id="orders">
+        <table id="orderTable">
+            <tr>
+                <td><b>ORDERS</b></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <tr>
+                <td>DATE</td><td>STATUS</td><td>ORDER NO.</td><td></td><td>QTY.</td><td>TOTAL</td>
+            </tr>
+        </table>
+        </div>
     </div>
 
 

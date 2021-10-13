@@ -14,7 +14,11 @@ h2{
   width: 100%;
   color: #333333;
 }
-
+h3{
+  font-size: 13px;
+  font-weight: normal;
+  color: #333333;
+}
 p{
   margin: auto;
   text-align: center;
