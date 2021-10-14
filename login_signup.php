@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+include "script/php/users_create_table.php";
+?>
 <head>
 <title>The Closet Shopper - Login</title>
 <meta charset="utf-8">
@@ -9,19 +10,21 @@
 <body>
 <style>
     .content{
+        width: 500px;
         min-height: 450px;
-    }
+        margin:auto;    }
     table{
         text-align:left;
     }
+
     #signin_form{
         float: left;
-        padding: 15px 15px 15px 75px;
+        padding: 15px 15px 15px 55px;
         margin-bottom: 24px;
     }
     #register_form{
         float: right;
-        padding: 15px 75px 15px 15px;
+        padding: 15px 55px 15px 15px;
         margin-bottom: 24px;
     }
     th{
@@ -70,8 +73,8 @@
 
     <div class="content">
         <hr>
-        
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+        <form action="script/php/login.php" method=POST>
         <table id = "signin_form">
             <tr><th><h2>SIGN IN</h2><br></th></tr>
             <div class="form-group">
@@ -80,7 +83,7 @@
             </tr>
             <tr>
                 <td>
-                    <input type="email" name="username"  class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "Enter your registered email address."><br><br>
+                    <input type="email" name="userid"  class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "Enter your registered email address."><br><br>
                     <span class="invalid-feedback"><?php echo $password_err; ?></span>
                 </td>
             </tr>
@@ -91,24 +94,27 @@
             </tr>
             <tr>
                 <td>
-                <input type="password" size=40 placeholder="Enter your password" n name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required></td>
+                <input type="password" size=40 placeholder="Enter your password"  name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required></td>
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </tr>
             </div>
             <div class="form-group">
             <tr><td><button type="submit"id="Submit"class="btn btn-primary">LOGIN</button></td></tr>
-        </table>
+            <tr>
 
+            </tr>        
+        </table>
+    </form>	
         <table id = "register_form">
             <tr><th><h2>REGISTER</h2><br></th></tr>
            
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <form action="script/php/register.php" method=POST>
             <div class="form-group">
              <tr>
                 <th><label>EMAIL ADDRESS &ast;<br></label></th>
              </tr>
              <tr><td>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "All communication will be sent to this address."><br><br>
+                <input type="email" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "All communication will be sent to this address."><br><br>
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 </td></tr>
             </div>    
@@ -128,7 +134,7 @@
                 <th><label>CONFIRM PASSWORD &ast;<br></label></th>
              </tr>
              <tr><td>    
-                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" size="40"><br><br>
+                    <input type="password" name="password2" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" size="40"><br><br>
                     <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
                 </td></tr>
             </div>
@@ -138,7 +144,7 @@
                 <th><label>SHIPPING ADDRESS &ast;<br></label></th>
              </tr>
              <tr><td>
-                <input type="text" name="Address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $address; ?>" size=40 required placeholder = "Enter your delivery address."><br><br>
+                <input type="text" name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $address; ?>" size=40 required placeholder = "Enter your delivery address."><br><br>
                 <span class="invalid-feedback"><?php echo $address_err; ?></span>
                 </td></tr>
             </div>
@@ -147,10 +153,12 @@
                 <tr><td><button type="submit"id="Submit"class="btn btn-primary">REGISTER NEW ACCOUNT</button></td></tr>
                 </div>
             </tr>    
-        </form>
         </table>
+        </form>
 
-	</form>	
+
+
+
     </div>
 
     <footer>

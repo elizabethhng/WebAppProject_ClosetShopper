@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<?php  
+    session_start();
+    // check session variable
+
+    if (!isset($_SESSION['valid_user']))
+    {
+        header("refresh:0; url=login_signup.php");
+    }
+?> 
+
 <style>
     #userDetails{
         float: left;
@@ -85,26 +95,13 @@
         <h1>Profile Page</h1>
         <!-- user information -->
         <div id="userDetails">
-        <?php
-        if (isset($_SESSION['valid_user']))
-        {
-            echo 'You are logged in as: '.$_SESSION['valid_user'].' <br />';
-            echo '<a href="logout.php">Log out</a><br />';
-        }
-        else
-        {
-            if (!isset($userid))
-            {
-            // if not logged in
-            header("refresh:0; url=login_signup.php");
-            }
-        }
-        ?>    
-            <h3><b>User Email:</b> USER@eee.com</h3>
-            <h3><b>Shipping Address:</b> 123 Nanyang St 10</h3>
+ 
+            <h3><b>User Email:</b> <?php echo $_SESSION['valid_user'] ?></h3>
+            <h3><b>Shipping Address:</b> <?php echo $_SESSION['address'] ?></h3>
         </div>
         <!-- Logout Button -->
-        <button id="logout" type="submit" >LOGOUT</button>
+        <form action="script/php/logout.php" method=POST>
+        <button id="logout" type="submit" >LOGOUT</button></form>
         <!-- Order table -->
         <div id="orders">
         <table id="orderTable">
