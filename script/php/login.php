@@ -28,6 +28,7 @@ $password = md5($password);
     // if they are in the database register the user id and address
     $_SESSION['valid_user'] = $userid;
     $_SESSION['address']=$row['address'];
+    
   }
   $dbcnx->close();
 }
@@ -41,7 +42,9 @@ $password = md5($password);
     if (isset($userid))
     {
       // if they've tried and failed to log in
-      echo 'Could not log you in.<br />';
+      $_SESSION['login_fail']= true;
+      header("refresh:0; url=../../login_signup.php");
+
     }
   }
 ?>

@@ -101,7 +101,17 @@ include "script/php/users_create_table.php";
             <div class="form-group">
             <tr><td><button type="submit"id="Submit"class="btn btn-primary">LOGIN</button></td></tr>
             <tr>
-
+            <td>
+            <?php
+                session_start();
+               if ($_SESSION['login_fail'])
+               {
+                 // if they've tried and failed to log in
+                 echo 'Invalid Email/Password.';
+                 
+               }
+             ?>
+             <td>
             </tr>        
         </table>
     </form>	
