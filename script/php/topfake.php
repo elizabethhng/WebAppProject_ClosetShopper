@@ -35,6 +35,5 @@
 		echo "Failed fetching data from database.";
 
 	mysqli_close($conn);
-    var_dump($row);
 }
 ?>
