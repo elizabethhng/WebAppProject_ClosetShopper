@@ -1,33 +1,43 @@
 <?php
-include "script/php/fetch_product_details.php";
+function print_table($category) {
+    $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
 
-function generate_name_table($id){
-    $end = $id + 3;
-    for ($id; $id<$end; $id++) {
-        echo "<th>";
-        echo insert_name($id);
-        echo "</th>";
-    }
+	if (!$conn) {
+		die("Connection failed: " . mysqli_connect_error());
+	}
+	$sql = "SELECT * FROM f32ee.all_products WHERE product_type = '$category'";
+	if ($result = mysqli_query($conn, $sql)) {
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+                $i=0;
+                while($row = mysqli_fetch_assoc($result)) {
+                    // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                if($i==0){echo "<tr>"; $i=3;}
+                        echo "<td><table>";
+                        echo "<img src=";
+                        echo $row["product_image"];
+                        echo "></td></tr>";
+                                        
+                        echo "<tr><th>";
+                        echo $row["product_name"];
+                        echo "</th></tr>";
+        
+                        echo "<tr><td style='padding: 1%;'>";
+                        echo "$";
+                        echo $row["product_price"];
+                        echo "</table></td>";
+                if($i==0){echo "</tr>"; }
+                $i--;
+                }
+
+            }
+
+	} else {
+		echo "Failed fetching data from database.";
+
+	mysqli_close($conn);
 }
-
-function generate_price_table($id){
-    $end = $id + 3;
-    for ($id; $id<$end; $id++) {
-        echo "<td style='padding: 1%;'>";
-        echo "$";
-        echo insert_price($id);
-        echo "</td>";
-    }
-}
-
-function generate_image_table($id){
-    $end = $id + 3;
-    for ($id; $id<$end; $id++) {
-        echo "<td>";
-        echo "<img src=";
-        echo insert_image($id);
-        echo ">";
-    }
 }
 ?>
 

@@ -61,7 +61,7 @@
 
         <!-- Centered link -->
         <div class="topnav-centered">
-            <a href="index.html"><img src="media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
+            <a href="index.php"><img src="media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
         </div>
     
         <!-- Left-aligned links (default) -->
@@ -88,7 +88,7 @@
 
     <div class="content">
     <ul class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li>Profile Page</li>
             <hr style="margin-top:5px;">
     </ul>

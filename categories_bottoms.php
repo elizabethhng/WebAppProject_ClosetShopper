@@ -28,7 +28,7 @@ include "script/php/display_product.php";
 
         <!-- Centered link -->
         <div class="topnav-centered">
-            <a href="index.html"><img src="media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
+            <a href="index.php"><img src="media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
         </div>
     
         <!-- Left-aligned links (default) -->
@@ -55,23 +55,13 @@ include "script/php/display_product.php";
 
     <div class="content">
         <ul class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>bottoms</li>
                 <hr style="margin-top:5px;">
         </ul>
         <h1>BOTTOMS</h1>
         <table class="category">
-            <tr><?php generate_image_table(10); ?></tr>
-            <tr><?php generate_name_table(10); ?></tr>
-            <tr><?php generate_price_table(10); ?></tr>
-
-            <tr><?php generate_image_table(13); ?></tr>
-            <tr><?php generate_name_table(13); ?></tr>
-            <tr><?php generate_price_table(13); ?></tr>
-
-            <tr><?php generate_image_table(16); ?></tr>
-            <tr><?php generate_name_table(16); ?></tr>
-            <tr><?php generate_price_table(16); ?></tr>
+            <?php print_table('bottoms'); ?>
         </table>
     </div>
 

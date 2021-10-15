@@ -41,7 +41,7 @@ VALUES(NULL, 'COTTON LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 19.9, 'media/tops/5
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'OFFICE LONG-SLEEVE WHITE COLLAR SHIRT', 'tops', 999, 25, 'media/tops/6.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'SILK LONG-SLEEVE COLLAR SHIRT - (4PC BUNDLE)', 'tops', 999, 103, 'media/tops/7.jpg');";
+VALUES(NULL, 'SILK COLLAR SHIRT - (4PC BUNDLE)', 'tops', 999, 103, 'media/tops/7.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'SILK LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 32, 'media/tops/8.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
