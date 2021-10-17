@@ -14,7 +14,7 @@ function print_table($category) {
             while($row = mysqli_fetch_assoc($result)) {
                 // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
                 if($i==0){echo "<tr>"; $i=3;}
-                    echo "<td><table>";
+                    echo "<td  style='vertical-align: top;'><table>";
                     echo '<div class="container">';
                     echo '<img class="image" src=';
                     echo $row["product_image"];

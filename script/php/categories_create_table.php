@@ -35,43 +35,43 @@ mysqli_query($conn, $sql);
 
 //Fill tables with data [tops]
 $sql = "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'ROUND-NECK BASIC DARK GRAY TEE', 'tops', 999, 28,'media/tops/1.jpg');";
+VALUES(NULL, 'ROUND-NECK BASIC TEE', 'tops', 999, 28,'media/tops/1.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'OVERSIZE LONG TIED WAIST TRENCH COAT', 'tops', 999, 73, 'media/tops/2.jpg');";
+VALUES(NULL, 'OVERSIZE TRENCH COAT', 'tops', 999, 73, 'media/tops/2.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'LOOSE LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 25.5, 'media/tops/3.jpg');";
+VALUES(NULL, 'LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 25.5, 'media/tops/3.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'ROUND-NECK BASIC BLACK TEE', 'tops', 999, 28, 'media/tops/4.jpg');";
+VALUES(NULL, 'ROUND-NECK BLACK TEE', 'tops', 999, 28, 'media/tops/4.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'COTTON LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 19.9, 'media/tops/5.jpg');";
+VALUES(NULL, 'LONG-SLEEVE COTTON COLLAR SHIRT', 'tops', 999, 19.9, 'media/tops/5.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'OFFICE LONG-SLEEVE WHITE COLLAR SHIRT', 'tops', 999, 25, 'media/tops/6.jpg');";
+VALUES(NULL, 'OFFICE COLLAR SHIRT', 'tops', 999, 25, 'media/tops/6.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'SILK COLLAR SHIRT - (4PC BUNDLE)', 'tops', 999, 103, 'media/tops/7.jpg');";
+VALUES(NULL, 'SILK COLLAR SHIRT - (4PC)', 'tops', 999, 103, 'media/tops/7.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'SILK LONG-SLEEVE COLLAR SHIRT', 'tops', 999, 32, 'media/tops/8.jpg');";
+VALUES(NULL, 'SILK LONG-SLEEVE SHIRT', 'tops', 999, 32, 'media/tops/8.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'SLEEVELESS V-NECK TIED TOP', 'tops', 999, 22.9, 'media/tops/9.jpg');";
+VALUES(NULL, 'SLEEVELESS V-NECK TOP', 'tops', 999, 22.9, 'media/tops/9.jpg');";
 
 //Fill tables with data [bottoms]
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'LOOSE CUT THREE-QUATER PANTS', 'bottoms', 999, 45.9, 'media/bottoms/1.jpg');";
+VALUES(NULL, 'LOOSE THREE-QUARTER PANTS', 'bottoms', 999, 45.9, 'media/bottoms/1.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'ARMY GREEN DENIM SHORT SKIRT', 'bottoms', 999, 32, 'media/bottoms/2.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'LOOSE DRY-FIT HOME WEAR SHORTS', 'bottoms', 999, 15, 'media/bottoms/3.jpg');";
+VALUES(NULL, 'LOOSE DRY-FIT SHORTS', 'bottoms', 999, 15, 'media/bottoms/3.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'LOOSE STRAIGHT CUT LONG PANTS', 'bottoms', 999, 59.9, 'media/bottoms/4.jpg');";
+VALUES(NULL, 'LOOSE STRAIGHT LONG PANTS', 'bottoms', 999, 59.9, 'media/bottoms/4.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'BLACK LEATHER A-SHAPE SHORTS', 'bottoms', 999, 26, 'media/bottoms/5.jpg');";
+VALUES(NULL, 'BLACK LEATHER SHORTS', 'bottoms', 999, 26, 'media/bottoms/5.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'BLUE DENIM SHORT SKIRT', 'bottoms', 999, 28.5, 'media/bottoms/6.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'ASHE BROWN LONG SKIRT', 'bottoms', 999, 56, 'media/bottoms/7.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'HIGH WAIST BLACK THREE-QUATER PANTS', 'bottoms', 999, 63.5, 'media/bottoms/8.jpg');";
+VALUES(NULL, 'HIGH WAIST PANTS', 'bottoms', 999, 63.5, 'media/bottoms/8.jpg');";
 $sql .= "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
-VALUES(NULL, 'DENIM IRREGULAR CUT SHORT SKIRT', 'bottoms', 999, 25.9, 'media/bottoms/9.jpg');";
+VALUES(NULL, 'DENIM SHORT SKIRT', 'bottoms', 999, 25.9, 'media/bottoms/9.jpg');";
 
 
 //Fill tables with data [bags]
