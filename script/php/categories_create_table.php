@@ -11,12 +11,8 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-/*$priv = "GRANT ALL PRIVILEGES ON f32ee.* TO f32ee@f32ee;";
-mysqli_query($conn, $priv);
-$priv = "FLUSH PRIVILEGES;";
-mysqli_query($conn, $priv);*/
 
-//Add some tables to the database [image is not included]
+//Create tables for items
 $sql = "CREATE TABLE IF NOT EXISTS all_products (
 product_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 product_name VARCHAR(40) NOT NULL UNIQUE,
@@ -25,6 +21,16 @@ product_quantity INT NOT NULL,
 product_price DOUBLE NOT NULL,
 product_image VARCHAR(40) NOT NULL
 )";
+mysqli_query($conn, $sql);
+
+//Create tables for cart
+$sql = "CREATE TABLE IF NOT EXISTS cart (
+    order_id INT PRIMARY KEY, 
+    order_name VARCHAR(40) NOT NULL UNIQUE,
+    order_quantity INT NOT NULL,
+    order_subtotal DOUBLE NOT NULL,
+    order_image VARCHAR(40) NOT NULL
+    )";
 mysqli_query($conn, $sql);
 
 //Fill tables with data [tops]

@@ -13,6 +13,46 @@ include "script/php/display_product.php";
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
+<style>
+    .container {
+    position: relative;
+    }
+
+    .image {
+    max-width: 100%;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    }
+
+    .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+    }
+
+    .container:hover .image {
+    opacity: 0.3;
+    }
+
+    .container:hover .middle {
+    opacity: 1;
+    }
+
+    button {
+    background-color: #ECCBBA;
+    color: #555555;
+    font-size: 16px;
+    padding: 10px 20px;
+    }
+</style>
 
 <div id="wrapper">
     <!-- Announcement banner -->

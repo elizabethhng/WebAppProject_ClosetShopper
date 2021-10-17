@@ -1,3 +1,7 @@
+<?php 
+include "script/php/cart_create_table.php";
+include "script/php/display_product.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,22 @@
 </head>
 <body>
 
+<style>
+    #orderTable{
+        margin:auto;
+        margin-top: 100px;
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
 
+    }
+    #orders{
+        padding:0px 33px;
+    }
+    tr{
+        border-bottom: 1px solid #b9b9b9;
+    }
+</style>
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
@@ -46,12 +65,29 @@
     </div>
 
     <div class="content">
-    <ul class="breadcrumb">
-            <li><a href="index.php">Home</a></li>
-            <li>Cart</li>
-            <hr style="margin-top:5px;">
-    </ul>
-        <p>CART</p>
+        <ul class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li>Cart</li>
+                <hr style="margin-top:5px;">
+        </ul>
+        <h1>CART</h1>
+        <div id="orders">
+        <table id="orderTable">
+            <colgroup>
+                <col span="1" style="width: 60%;">
+                <col span="1" style="width: 20%;">
+                <col span="1" style="width: 5%;">
+                <col span="1" style="width: 15%;">
+            </colgroup>
+            <tr>
+                <td>PRODUCTS</td><td>QTY.</td><td></td><td>SUBTOTAL</td>
+            </tr>
+            <?php print_table(); ?>
+            <tr>
+                <td></td><td></td><td>TOTAL</td><td></td>
+            </tr>
+        </table>
+        </div>
     </div>
 
 

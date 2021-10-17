@@ -26,37 +26,5 @@
 .category img {
   max-width: 100%;
   height: auto;
-  opacity: 1;
   display: block;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
-
-.category .middle {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 45%;
-  left: 19%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.category:hover .image {
-  opacity: 0.3;
-}
-
-.category:hover .middle {
-  opacity: 1;
-}
-
-.text {
-  background-color: #ECCBBA;
-  color: #555555;
-  font-size: 16px;
-  padding: 10px 20px;
-}
-
-.price_label {
-  padding: 1%;
 }

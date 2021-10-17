@@ -1,5 +1,7 @@
 <?php 
 include "script/php/categories_create_table.php";
+include "script/php/user_create_table.php";
+include "script/php/cart_create_table.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
