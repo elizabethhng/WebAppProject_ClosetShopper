@@ -27,4 +27,29 @@ if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
     mysqli_close($conn);
 }
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+/*$priv = "GRANT ALL PRIVILEGES ON f32ee.* TO f32ee@f32ee;";
+mysqli_query($conn, $priv);
+$priv = "FLUSH PRIVILEGES;";
+mysqli_query($conn, $priv);*/
+
+//Add some tables to the database [image is not included]
+$sql = "CREATE TABLE IF NOT EXISTS all_orders (
+order_id INT(11) NOT NULL UNIQUE PRIMARY KEY, 
+username VARCHAR(40) NOT NULL,
+ordered_date DATE NOT NULL,
+ordered_items VARCHAR(40) NOT NULL,
+ordered_qtys INT(2) NOT NULL,
+order_status ENUM('Paid','Cancelled') NOT NULL
+)";
+
+if (!mysqli_query($conn, $sql)) {
+    echo "Error creating table: " . mysqli_error($conn);
+    mysqli_close($conn);
+}
+
 ?>
