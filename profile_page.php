@@ -46,6 +46,9 @@
     tr{
         border-bottom: 1px solid #b9b9b9;
     }
+    td{
+        height:45px;
+    }
 
 </style>
 
@@ -109,8 +112,31 @@
                 <td><b>ORDERS</b></td><td></td><td></td><td></td><td></td><td></td>
             </tr>
             <tr>
-                <td>DATE</td><td>STATUS</td><td>ORDER NO.</td><td></td><td>QTY.</td><td>TOTAL</td>
+                <td>DATE</td><td>STATUS</td><td>ORDER NO.</td><td></td><td>TOTAL</td>
             </tr>
+            <?php
+            $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
+           	if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+            $username=$_SESSION['valid_user'];
+            $sql = "SELECT * FROM f32ee.all_orders WHERE order_username ='$username' ";
+            if ($result = mysqli_query($conn, $sql)) {
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr><td>". $row["order_date"]."</td>";
+                            echo "<td>". $row["order_status"]."</td>";
+                            echo "<td>". $row["order_id"]."</td>";
+                            if($row["order_status"]=='Paid')
+                            {echo "<td><button class='grey_button'>CANCEL ORDER</button></td>";}
+                            else{echo "<td></td>";}
+                            echo "<td>$".$row["order_totprice"]."</td></tr>";
+                    }
+            } else {
+                echo "Failed fetching data from database.";
+                mysqli_close($conn);
+                } 
+            ?>
         </table>
         </div>
     </div>

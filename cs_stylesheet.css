@@ -52,6 +52,16 @@ button {
   font-family: "Roboto";
   
 }
+.grey_button{
+  background-color: #E5E5E5;
+  color:#333;
+  padding:8px 30px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: "Roboto";
+}
 button:hover{
   background-color: #ECCBBA;
   color:#555555 ;
