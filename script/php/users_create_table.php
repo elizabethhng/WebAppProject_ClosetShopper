@@ -39,13 +39,16 @@ mysqli_query($conn, $priv);*/
 
 //Add some tables to the database [image is not included]
 $sql = "CREATE TABLE IF NOT EXISTS all_orders (
-order_id INT(11) NOT NULL UNIQUE PRIMARY KEY, 
-username VARCHAR(40) NOT NULL,
-ordered_date DATE NOT NULL,
-ordered_items VARCHAR(40) NOT NULL,
-ordered_qtys INT(2) NOT NULL,
+order_id INT(6) NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT, 
+order_username VARCHAR(40) NOT NULL,
+order_address VARCHAR(40) NOT NULL,
+order_date DATE NOT NULL,
+order_itemstr VARCHAR(255) NOT NULL,
+order_totqtys INT(2) NOT NULL,
+order_totprice DOUBLE NOT NULL,
 order_status ENUM('Paid','Cancelled') NOT NULL
-)";
+)AUTO_INCREMENT=10001";
+// $sql .= "ALTER TABLE Persons AUTO_INCREMENT=100;";
 
 if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
