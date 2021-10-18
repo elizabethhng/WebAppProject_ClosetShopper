@@ -9,6 +9,7 @@
 <body>
 
 <?php  
+    include "script/php/fetch_product_details.php";
     session_start();
     // check session variable
 
@@ -38,6 +39,8 @@
         width: 100%;
         border-collapse: collapse;
         font-size: 13px;
+        text-align: left;
+        color:#555555;
 
     }
     #orders{
@@ -46,6 +49,11 @@
     tr{
         border-bottom: 1px solid #b9b9b9;
     }
+    td{
+        height:45px;
+        /* width:100px;  */
+    }
+
 
 </style>
 
@@ -109,8 +117,35 @@
                 <td><b>ORDERS</b></td><td></td><td></td><td></td><td></td><td></td>
             </tr>
             <tr>
-                <td>DATE</td><td>STATUS</td><td>ORDER NO.</td><td></td><td>QTY.</td><td>TOTAL</td>
+                <th>DATE</th><th>ORDER NO.</th><th>ITEMS</th><th>TOTAL</th><th>STATUS</th><th></th>
             </tr>
+            <?php
+            $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
+           	if (!$conn) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+            $username=$_SESSION['valid_user'];
+            $sql = "SELECT * FROM f32ee.all_orders WHERE order_username ='$username' ";
+            if ($result = mysqli_query($conn, $sql)) {
+                    // output data of each row
+                    while($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr><td>". $row["order_date"]."</td>";
+                            echo "<td>". $row["order_id"]."</td>";
+                            echo "<td style='width: 40%;'> 1x beth <br> 2x jr</td>";
+                            echo "<td>$".$row["order_totprice"]."</td>";
+                            echo "<td>". $row["order_status"]."</td>";
+                            if($row["order_status"]=='Paid'){
+                            $order_id=$row["order_id"];
+                            echo "<td style='width: 170px;'><form action='script/php/cancel_order.php' method=GET>";
+                            echo "<button class='grey_button'>CANCEL ORDER</button>";
+                            echo "<input type='hidden' value='$order_id' name='id' /></form></td></tr>";}
+                            else{echo "<td></td></tr>";}
+                    }
+            } else {
+                echo "Failed fetching data from database.";
+                mysqli_close($conn);
+                } 
+            ?>
         </table>
         </div>
     </div>
