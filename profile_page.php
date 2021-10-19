@@ -128,9 +128,10 @@
                 die("Connection failed: " . mysqli_connect_error());
             }
             $username=$_SESSION['valid_user'];
-            $sql = "SELECT * FROM f32ee.all_orders WHERE order_username ='$username' ";
+            $sql = "SELECT * FROM f32ee.all_orders WHERE order_username ='$username' ORDER BY order_id DESC";
             if ($result = mysqli_query($conn, $sql)) {
                     // output data of each row
+                    
                     while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr><td>". $row["order_date"]."</td>";
                             echo "<td>". $row["order_id"]."</td>";
