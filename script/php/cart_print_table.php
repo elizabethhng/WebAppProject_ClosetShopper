@@ -20,7 +20,7 @@ foreach ($cart as $product_id => $qty) {
     }
     
     echo "<tr><td>
-    <form method=GET id='cart_table'>
+    <form method=POST id='cart_table'>
     <button type='submit' name='delete' value='$product_id'>x</button>
     </td><td>";
 
@@ -29,10 +29,9 @@ foreach ($cart as $product_id => $qty) {
     echo "></td><td>";
     echo insert_name($product_id);
     echo "</td><td>
-    <button type='submit' name='add' value='$product_id'>+</button>
-    ";
-    echo $qty;
-    echo "<button type='submit' name='sub' value='$product_id'>-</button>
+    <button type='submit' name='sub' value='$product_id'>-</button>";
+    echo "<input type='text' value=$qty></input>";
+    echo "<button type='submit' name='add' value='$product_id'>+</button>
     </form></td><td></td><td>SGD $";
     $subtotal = $price*$qty;
     echo $subtotal;
@@ -40,30 +39,26 @@ foreach ($cart as $product_id => $qty) {
     $total = $total + $subtotal;
 }
 
-if (isset($_GET['delete'])) {
-    $i = $_GET['delete'];
+if (isset($_POST['delete'])) {
+    $i = $_POST['delete'];
     foreach($_SESSION['cart'] as $product_id) {
     $key=array_search($i,$_SESSION['cart']);
     unset($_SESSION['cart'][$key]);
     }
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Refresh:0 url=../../cart.php");
+    echo "<script type='text/javascript'> document.location.href = 'cart.php'; </script>";
 } 
-if (isset($_GET
-['add'])) {
-    $i = $_GET
-    ['add'];
+if (isset($_POST['add'])) {
+    $i = $_POST['add'];
     $_SESSION['cart'][] = $i;
-    header("Refresh:0 url=../../cart.php");
+    echo "<script type='text/javascript'> document.location.href = 'cart.php'; </script>";
 } 
-if (isset($_GET
-['sub'])) {
-    $i = $_GET
-    ['sub'];
+if (isset($_POST['sub'])) {
+    $i = $_POST['sub'];
     $key=array_search($i,$_SESSION['cart']);
     unset($_SESSION['cart'][$key]);
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Refresh:0 url=../../cart.php");
+    echo "<script type='text/javascript'> document.location.href = 'cart.php'; </script>";
 }
 
 mysqli_close($conn);

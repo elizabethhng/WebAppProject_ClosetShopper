@@ -137,7 +137,7 @@ include "script/php/categories_display_product.php";
                     <form action="script/php/cart_checkout.php" method=GET>
                     <td colspan="3">
                         <button id="checkout" name="checkout" type="submit" value='checkout'>CHECKOUT</button>
-                        <a href="cart.php"><button id="updatecart" name="updatecart" type="button" >UPDATE CART</button>
+                        <a href="cart.php"><button id="updatecart" name="updatecart" type="button" >UPDATE CART</button></a>
                     </td>
                     </form>
                 </tr>
