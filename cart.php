@@ -21,19 +21,28 @@ include "script/php/categories_display_product.php";
         width: 100%;
         border-collapse: collapse;
         font-size: 13px;
+        color:#555555;
     }
     #checkout{
         float: right;
-        margin: 20px 10px;
+        margin: 20px 0px 20px 20px;
+        width: auto;
+        padding:8px 40px;
     }
     #updatecart{
         float: right;
-        margin: 20px 10px;
-        
+        margin: 20px 20px 20px 0px;
+        width: auto;
+        padding:8px 40px;
+    }
+    #continueshopping{
+        float: left;
+        margin: 20px 20px 20px 0px;
+        width: auto;
+        padding:8px 40px;
     }
     #orders{
         padding:0px 33px;
-        display:inline-block;
     }
     tr{
         border-bottom: 1px solid #b9b9b9;
@@ -101,13 +110,13 @@ include "script/php/categories_display_product.php";
         </ul>
         <h1>SHOPPING CART</h1>
         <div id="orders">
-        <form action="script/php/cart_checkout.php" method=POST>
+        <!--<form action="script/php/cart_checkout.php" method=POST>-->
             <table class="cart" id="orderTable">
                 <colgroup>
                     <col span="1" style="width: 5%;">
                     <col span="1" style="width: 10%;">
-                    <col span="1" style="width: 45%;">
-                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 40%;">
+                    <col span="1" style="width: 25%;">
                     <col span="1" style="width: 5%;">
                     <col span="1" style="width: 15%;">
                 </colgroup>
@@ -120,11 +129,21 @@ include "script/php/categories_display_product.php";
                 <tr style='border-bottom: 0px;'>
                     <td colspan="5" style='text-align: right;'></td><td><i><small>(GST incl.)</small></i></td>
                 </tr>
+                <tr style='border-bottom: 0px;'>
+                
+                    <td colspan="3">
+                        <a href="index.php"><button id="continueshopping" name="continueshopping" class="grey_button" type="button">CONTINUE SHOPPING</button></a>
+                    </td>
+                    <form action="script/php/cart_checkout.php" method=GET>
+                    <td colspan="3">
+                        <button id="checkout" name="checkout" type="submit">CHECKOUT</button>
+                        <button id="updatecart" name="updatecart" type="submit">UPDATE CART</button>
+                    </td>
+                    </form>
+                </tr>
             </table>
             
-            <button id="checkout" name="checkout" type="submit">CHECKOUT</button>
-            <button id="updatecart">UPDATE CART</button>
-        </form>
+            
         </div>
         
     </div>
