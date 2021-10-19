@@ -5,6 +5,8 @@ include "script/php/users_create_table.php";
 <title>The Closet Shopper - Login</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="script/css/cs_stylesheet_category.css">
+<link rel="stylesheet" href="script/css/cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
@@ -38,7 +40,9 @@ include "script/php/users_create_table.php";
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
-        <h9>banner goes here</h9>
+        <div class="myBanner fade">New Collections Arrive every Thursday!</div>
+        <div class="myBanner fade">10% off for CSBank members</div>
+        <div class="myBanner fade">Free Delivery on all orders</div>
     </div>
 
     <!-- Top navigation -->
@@ -182,6 +186,7 @@ include "script/php/users_create_table.php";
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
-
+<script type="text/javascript" src="script/javascript/slide_show.js"></script>
+<script>banner_showSlides();</script>
 </body>
 </html>

@@ -1,6 +1,15 @@
 <?php 
 include "script/php/categories_create_table.php";
-include "script/php/display_product.php";
+include "script/php/categories_display_product.php";
+session_start();
+if (!isset($_SESSION['cart'])){
+	$_SESSION['cart'] = array();
+}
+if (isset($_GET['buy'])) {
+	$_SESSION['cart'][] = $_GET['buy'];
+	header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+	exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

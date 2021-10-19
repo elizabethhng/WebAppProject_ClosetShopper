@@ -23,16 +23,6 @@ product_image VARCHAR(40) NOT NULL
 )";
 mysqli_query($conn, $sql);
 
-//Create tables for cart
-$sql = "CREATE TABLE IF NOT EXISTS cart (
-    order_id INT PRIMARY KEY, 
-    order_name VARCHAR(40) NOT NULL UNIQUE,
-    order_quantity INT NOT NULL,
-    order_subtotal DOUBLE NOT NULL,
-    order_image VARCHAR(40) NOT NULL
-    )";
-mysqli_query($conn, $sql);
-
 //Fill tables with data [tops]
 $sql = "INSERT IGNORE INTO all_products (product_id, product_name, product_type, product_quantity, product_price, product_image)
 VALUES(NULL, 'ROUND-NECK BASIC TEE', 'tops', 999, 28,'media/tops/1.jpg');";

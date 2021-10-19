@@ -1,6 +1,6 @@
 <?php 
 include "script/php/cart_create_table.php";
-include "script/php/display_product.php";
+include "script/php/categories_display_product.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,8 @@ include "script/php/display_product.php";
 <title>The Closet Shopper - Cart</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="script/css/cs_stylesheet_category.css">
+<link rel="stylesheet" href="script/css/cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
 </head>
 <body>
@@ -19,19 +21,47 @@ include "script/php/display_product.php";
         width: 100%;
         border-collapse: collapse;
         font-size: 13px;
-
+    }
+    #checkout{
+        float: right;
+        margin: 20px 10px;
+    }
+    #updatecart{
+        float: right;
+        margin: 20px 10px;
+        
     }
     #orders{
         padding:0px 33px;
+        display:inline-block;
     }
     tr{
         border-bottom: 1px solid #b9b9b9;
     }
+    th{
+        text-align: left;
+    }
+    td{
+        padding: 5px;
+    }
+    .cart img{
+        padding: 3%;
+        width: 126px;
+        height: 126px;
+    }
+    .cart button{
+        margin: 0px 20px;
+        padding:10px;
+        width: 43px;
+    }
+    
 </style>
 <div id="wrapper">
     <!-- Announcement banner -->
     <div id="banner">
-        <h9>banner goes here</h9>
+        <div class="myBanner fade">New Collections Arrive every Thursday!</div>
+        <div class="myBanner fade">10% off for CSBank members</div>
+        <div class="myBanner fade">Free Delivery on all orders</div>
     </div>
 
     <!-- Top navigation -->
@@ -55,7 +85,6 @@ include "script/php/display_product.php";
         <!-- </div> -->
         </div>
 
-    
         <!-- Right-aligned links -->
         <div class="topnav-right">
             <a href="cart.php"><img src="media\cart_icon.png" width="13px" height="13px" alt="cart_icon" >CART</a>
@@ -70,24 +99,34 @@ include "script/php/display_product.php";
                 <li>Cart</li>
                 <hr style="margin-top:5px;">
         </ul>
-        <h1>CART</h1>
+        <h1>SHOPPING CART</h1>
         <div id="orders">
-        <table id="orderTable">
-            <colgroup>
-                <col span="1" style="width: 60%;">
-                <col span="1" style="width: 20%;">
-                <col span="1" style="width: 5%;">
-                <col span="1" style="width: 15%;">
-            </colgroup>
-            <tr>
-                <td>PRODUCTS</td><td>QTY.</td><td></td><td>SUBTOTAL</td>
-            </tr>
-            <?php print_table(); ?>
-            <tr>
-                <td></td><td></td><td>TOTAL</td><td></td>
-            </tr>
-        </table>
+        <form action="script/php/cart_checkout.php" method=POST>
+            <table class="cart" id="orderTable">
+                <colgroup>
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 10%;">
+                    <col span="1" style="width: 45%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 5%;">
+                    <col span="1" style="width: 15%;">
+                </colgroup>
+                <tr>
+                    <th colspan="3">PRODUCTS</th><th>QTY.</th><th></th><th>SUBTOTAL</th>
+                </tr>
+                    <?php include "script/php/cart_print_table.php" ?>
+                    <th colspan="4"></th><th>TOTAL</th><td>SDG $<?php echo $total; ?></td>
+                </tr>
+                <tr style='border-bottom: 0px;'>
+                    <td colspan="5" style='text-align: right;'></td><td><i><small>(GST incl.)</small></i></td>
+                </tr>
+            </table>
+            
+            <button id="checkout" name="checkout" type="submit">CHECKOUT</button>
+            <button id="updatecart">UPDATE CART</button>
+        </form>
         </div>
+        
     </div>
 
 
@@ -102,6 +141,7 @@ include "script/php/display_product.php";
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
-
+<script type="text/javascript" src="script/javascript/slide_show.js"></script>
+<script>banner_showSlides();</script>
 </body>
 </html>
