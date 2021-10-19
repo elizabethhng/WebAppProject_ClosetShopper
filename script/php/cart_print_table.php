@@ -15,14 +15,14 @@ if (isset($_GET['delete'])) {
     unset($_SESSION['cart'][$key]);
     }
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Location: http://192.168.56.2/f32ee/4717%20Project/cart.php");
+    header("Refresh:0 url=cart.php");
 } 
 if (isset($_GET
 ['add'])) {
     $i = $_GET
     ['add'];
     $_SESSION['cart'][] = $i;
-    header("Location: http://192.168.56.2/f32ee/4717%20Project/cart.php");
+    header("Refresh:0 url=cart.php");
 } 
 if (isset($_GET
 ['sub'])) {
@@ -31,7 +31,7 @@ if (isset($_GET
     $key=array_search($i,$_SESSION['cart']);
     unset($_SESSION['cart'][$key]);
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Location: http://192.168.56.2/f32ee/4717%20Project/cart.php");
+    header("Refresh:0 url=cart.php");
 }
 
 $total = 0;
