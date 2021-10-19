@@ -8,6 +8,31 @@ $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+if (isset($_GET['delete'])) {
+    $i = $_GET['delete'];
+    foreach($_SESSION['cart'] as $product_id) {
+    $key=array_search($i,$_SESSION['cart']);
+    unset($_SESSION['cart'][$key]);
+    }
+    $_SESSION["cart"] = array_values($_SESSION["cart"]);
+    header("Refresh:0 url=cart.php");
+} 
+if (isset($_GET
+['add'])) {
+    $i = $_GET
+    ['add'];
+    $_SESSION['cart'][] = $i;
+    header("Refresh:0 url=cart.php");
+} 
+if (isset($_GET
+['sub'])) {
+    $i = $_GET
+    ['sub'];
+    $key=array_search($i,$_SESSION['cart']);
+    unset($_SESSION['cart'][$key]);
+    $_SESSION["cart"] = array_values($_SESSION["cart"]);
+    header("Refresh:0 url=cart.php");
+}
 
 $total = 0;
 foreach ($cart as $product_id => $qty) {
@@ -40,31 +65,6 @@ foreach ($cart as $product_id => $qty) {
     $total = $total + $subtotal;
 }
 
-if (isset($_GET['delete'])) {
-    $i = $_GET['delete'];
-    foreach($_SESSION['cart'] as $product_id) {
-    $key=array_search($i,$_SESSION['cart']);
-    unset($_SESSION['cart'][$key]);
-    }
-    $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Refresh:0 url=../../cart.php");
-} 
-if (isset($_GET
-['add'])) {
-    $i = $_GET
-    ['add'];
-    $_SESSION['cart'][] = $i;
-    header("Refresh:0 url=../../cart.php");
-} 
-if (isset($_GET
-['sub'])) {
-    $i = $_GET
-    ['sub'];
-    $key=array_search($i,$_SESSION['cart']);
-    unset($_SESSION['cart'][$key]);
-    $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    header("Refresh:0 url=../../cart.php");
-}
 
 mysqli_close($conn);
 ?>
