@@ -19,11 +19,11 @@ foreach ($cart as $product_id => $qty) {
     $total = $total + $subtotal;
 }
 
-if (isset($_GET['checkout'])){
+if (isset($_GET['checkout']) && $_GET['checkout']='checkout'){
     if (!isset($_SESSION['valid_user']))
     {
         header("refresh:0; url=login_signup.php");
-    }else {
+    }else if (isset($_SESSION['valid_user'])){
         $username = $_SESSION['valid_user'];
         $sql = "INSERT INTO f32ee.all_orders (order_username, order_date, order_itemstr, order_totprice, order_status) 
         VALUES ('$username', now(), '$ordered_items', $total, 1)";
@@ -32,8 +32,5 @@ if (isset($_GET['checkout'])){
     }
 }
 
-if (isset($_GET['updatecart']){
-    header("Refresh:0 url=../../cart.php");
-}
 
 ?>
