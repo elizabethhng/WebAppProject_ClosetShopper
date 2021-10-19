@@ -25,7 +25,7 @@ $sql = "INSERT INTO users (username, password,address)
 $result = $dbcnx->query($sql);
 
 if (!$result) 
-	echo "Your query failed.";
+	echo "Invalid Email, try again";
 else
 	echo "Welcome ". $username . ". You are now registered, you will be redirected to login in 5 seconds";
 	header("refresh:5; url=../../login_signup.php");

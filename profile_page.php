@@ -14,7 +14,6 @@
     include "script/php/fetch_product_details.php";
     session_start();
     // check session variable
-
     if (!isset($_SESSION['valid_user']))
     {
         header("refresh:0; url=login_signup.php");
@@ -135,7 +134,13 @@
                     while($row = mysqli_fetch_assoc($result)) {
                             echo "<tr><td>". $row["order_date"]."</td>";
                             echo "<td>". $row["order_id"]."</td>";
-                            echo "<td style='width: 40%;'> 1x beth <br> 2x jr</td>";
+                            echo "<td style='width: 40%;'><p style='text-align:left; padding:5px;'>";
+                            foreach (unserialize($row["order_itemstr"]) as $product_id => $qty)
+                            {
+                            echo "$qty X ";
+                            echo insert_name($product_id)."<br>";
+                            }
+                            echo "</p></td>";
                             echo "<td>$".$row["order_totprice"]."</td>";
                             echo "<td>". $row["order_status"]."</td>";
                             if($row["order_status"]=='Paid'){
@@ -145,7 +150,8 @@
                             echo "<input type='hidden' value='$order_id' name='id' /></form></td></tr>";}
                             else{echo "<td></td></tr>";}
                     }
-            } else {
+                }
+            else {
                 echo "Failed fetching data from database.";
                 mysqli_close($conn);
                 } 

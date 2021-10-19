@@ -35,7 +35,11 @@ $password = md5($password);
 
   if (isset($_SESSION['valid_user']))
   {
+    if(isset($_SESSION['cart']))
+    header("refresh:0; url=../../cart.php");
+    else
     header("refresh:0; url=../../profile_page.php");
+
   }
   else
   {
