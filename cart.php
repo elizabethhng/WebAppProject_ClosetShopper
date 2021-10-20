@@ -8,6 +8,7 @@ include "script/php/categories_display_product.php";
 <title>The Closet Shopper - Cart</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="script/css/cs_popup.css">
 <link rel="stylesheet" href="script/css/cs_stylesheet_category.css">
 <link rel="stylesheet" href="script/css/cs_stylesheet_slideshow.css">
 <link rel="stylesheet" href="cs_stylesheet.css">
@@ -62,6 +63,9 @@ include "script/php/categories_display_product.php";
         margin: 0px 20px;
         padding:10px;
         width: 43px;
+    }
+    #pass {
+        float: right;
     }
     
 </style>
@@ -134,12 +138,9 @@ include "script/php/categories_display_product.php";
                     <td colspan="3">
                         <a href="index.php"><button id="continueshopping" name="continueshopping" class="grey_button" type="button">CONTINUE SHOPPING</button></a>
                     </td>
-                    <form action="script/php/cart_checkout.php" method=GET>
                     <td colspan="3">
-                        <button id="checkout" name="checkout" type="submit" value='checkout'>CHECKOUT</button>
-                        <a href="cart.php"><button id="updatecart" name="updatecart" type="button" >UPDATE CART</button>
+                        <button id="checkout" name="checkout" value='<?php echo $user_check; ?>'>CHECKOUT</button>
                     </td>
-                    </form>
                 </tr>
             </table>
             
@@ -147,7 +148,42 @@ include "script/php/categories_display_product.php";
         </div>
         
     </div>
+<!-- <form action="script/php/cart_checkout.php" method=POST>
+<button id="updatecart" name="updatecart" >UPDATE CART</button>
+</form> -->
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+    <!-- <span class="close">&times;</span> -->
+    <strong>PAYMENT STATUS</strong>
+    </div>
+    <div class="modal-body">
+        <?php 
+            Session_start();
+            if(!isset($_SESSION['valid_user'])){
+                echo "Please Login!";
+            }elseif (!isset($_SESSION['cart'])){
+                echo "Cart is empty! Unable to Proceed";
+            }else{
+                echo "Thank you for shopping with us! Please select the payment status!";
+            }
+        ?>
+    </div>
+    <div class="modal-footer">
+    <form action="script/php/cart_checkout.php" method=POST>
+      <button class="grey_button" id="fail" type="submit" name="fail" 
+        <?php if(!isset($_SESSION['valid_user']) || !isset($_SESSION['cart'])){?> style="display:none;" <?php } ?>>PAYMENT FAIL</button>
+      <button class="grey_button" id="pass" type="submit" name="pass" 
+        <?php if(!isset($_SESSION['valid_user']) || !isset($_SESSION['cart'])){?> style="display:none;" <?php } ?>>PAYMENT SUCCESSFUL</button>
+    </form>
+    </div>
+  </div>
+  
+</div>
 
     <footer>
         <ul>
@@ -161,6 +197,27 @@ include "script/php/categories_display_product.php";
     </footer>
 </div>
 <script type="text/javascript" src="script/javascript/slide_show.js"></script>
-<script>banner_showSlides();</script>
+<script>
+    banner_showSlides();
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    // Get the button that opens the modal
+    var btn = document.getElementById("checkout");
+    // Get the <span> element that closes the modal
+    var close = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
 </body>
 </html>
