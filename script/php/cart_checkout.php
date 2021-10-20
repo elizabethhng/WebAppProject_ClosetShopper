@@ -19,18 +19,22 @@ foreach ($cart as $product_id => $qty) {
     $total = $total + $subtotal;
 }
 
-if (isset($_GET['checkout']) && $_GET['checkout']='checkout'){
-    if (!isset($_SESSION['valid_user']))
-    {
-        header("refresh:0; url=login_signup.php");
-    }else if (isset($_SESSION['valid_user'])){
-        $username = $_SESSION['valid_user'];
-        $sql = "INSERT INTO f32ee.all_orders (order_username, order_date, order_itemstr, order_totprice, order_status) 
-        VALUES ('$username', now(), '$ordered_items', $total, 1)";
-        mysqli_query($conn, $sql);
-        header("Refresh:0 url=../../profile_page.php");
-    }
+if (isset($_POST['pass'])){
+    $username = $_SESSION['valid_user'];
+    $sql = "INSERT INTO f32ee.all_orders (order_username, order_date, order_itemstr, order_totprice, order_status) 
+    VALUES ('$username', now(), '$ordered_items', $total, 1)";
+    mysqli_query($conn, $sql);
+    include 'email_comfirm.php';
+    unset($_SESSION['cart']);
+    //echo "<script type='text/javascript'> document.location = 'profile_page.php'; </script>";
+    header("Refresh:4 url=../../profile_page.php");
+    echo("Thank you for shopping with us! Comfirmation Email has been send to you! <br>Redirection to Profile Page in 3 seconds!");
 }
 
+if (isset($_POST['fail'])){
+    //echo "<script type='text/javascript'> document.location = 'cart.php'; </script>";
+    header("Refresh:1 url=../../cart.php");
+    echo("Payment unsuccessful! Please try again!");
+}
 
 ?>
