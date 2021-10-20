@@ -179,7 +179,7 @@ footer li a {
 }
     
     
-.topnav a:hover, .dropdown:hover .dropbtn, .dropdown-content a:hover {color: #a0a0a0;}
+a:hover, .topnav a:hover, .dropdown:hover .dropbtn, .dropdown-content a:hover {color: #a0a0a0;}
 
 .dropdown:hover .dropdown-content {display: block;}
 

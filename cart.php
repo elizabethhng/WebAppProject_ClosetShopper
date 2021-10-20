@@ -67,6 +67,9 @@ include "script/php/categories_display_product.php";
     #pass {
         float: right;
     }
+    a{
+        color:#555555
+    }
     
 </style>
 <div id="wrapper">
@@ -165,7 +168,7 @@ include "script/php/categories_display_product.php";
         <?php 
             Session_start();
             if(!isset($_SESSION['valid_user'])){
-                echo "Please Login!";
+                echo "Please <a href=login_signup.php> Register/Login!</a>";
             }elseif (!isset($_SESSION['cart'])){
                 echo "Cart is empty! Unable to Proceed";
             }else{

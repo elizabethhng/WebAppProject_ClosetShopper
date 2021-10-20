@@ -35,14 +35,63 @@ if (isset($_POST['pass'])){
 
     unset($_SESSION['cart']);
     //echo "<script type='text/javascript'> document.location = 'profile_page.php'; </script>";
-    header("Refresh:4 url=../../profile_page.php");
-    echo("Thank you for shopping with us! Comfirmation Email has been send to you! <br>Redirection to Profile Page in 3 seconds!");
+    header("Refresh:2 url=../../profile_page.php");
+    $message="<br><br>Thank you for shopping with Closet Shopper!<br>A Confirmation Email has been sent to you and you will be redirected to the profile page.";
+    // echo("Thank you for shopping with us! Comfirmation Email has been send to you! <br>Redirection to Profile Page in 3 seconds!");
 }
 
 if (isset($_POST['fail'])){
     //echo "<script type='text/javascript'> document.location = 'cart.php'; </script>";
-    header("Refresh:1 url=../../cart.php");
-    echo("Payment unsuccessful! Please try again!");
+    header("Refresh:2 url=../../cart.php");
+    $message="<br><br>Payment Unsuccessful, Please try again! <br>You will be redirected to your cart.";
+    // echo("Payment unsuccessful! Please try again! You will be redirected to your cart.");
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Closet Shopper - PAYMENT STATUS</title>
+<meta charset="utf-8">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
+<link rel="stylesheet" href="../../cs_stylesheet.css">
+</head>
+<body>
+
+
+<div id="wrapper">
+    <!-- Top navigation -->
+    <div class="topnav">
+
+        <!-- Centered link -->
+        <div class="topnav-centered" style= "height:75px;">
+            <a href="index.php"><img src="../../media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
+        </div>
+    
+    </div>
+
+    <div class="content" style="height:300px">
+        <ul class="breadcrumb">
+                <hr style="margin-top:5px;">
+        </ul>
+
+        <h1><strong>Payment Status</strong></h1>
+        <h1 style= "font-weight: normal;"><?php echo $message?> </h1>
+
+    </div>
+
+    <footer>
+        <ul>
+            <li><a><strong>We'd love to hear your feedback!</strong></a></li>
+            <li><a><img src="../../media\call_icon.png" width="8px" height="8px" alt="call_icon" >
+                Call Us : +65 6123 4567</a></li>
+            <li><a href=
+                "mailto:CLOSETSHOPPER@eee.com" ><img src="../../media\email_icon.png" width="8px" height="8px" alt="call_icon" > Email Us: CLOSETSHOPPER@eee.com</a></li>
+        </ul> 
+        <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
+    </footer>
+</div>
+
+</body>
+</html>
