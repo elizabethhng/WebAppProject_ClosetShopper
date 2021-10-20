@@ -24,7 +24,15 @@ if (isset($_POST['pass'])){
     $sql = "INSERT INTO f32ee.all_orders (order_username, order_date, order_itemstr, order_totprice, order_status) 
     VALUES ('$username', now(), '$ordered_items', $total, 1)";
     mysqli_query($conn, $sql);
-    include 'email_comfirm.php';
+    //include 'email_comfirm.php';
+    $to      = $username;
+    $subject = 'Your Order is Confirmed!';
+    $message = 'Thank you for shopping with Closet Shoppers';
+    $headers = 'From: f32ee@localhost' . "\r\n" .
+        'Reply-To: f32ee@localhost' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    mail($to, $subject, $message, $headers,'-ff32ee@localhost');
+
     unset($_SESSION['cart']);
     //echo "<script type='text/javascript'> document.location = 'profile_page.php'; </script>";
     header("Refresh:4 url=../../profile_page.php");
