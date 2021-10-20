@@ -1,5 +1,6 @@
 <?php 
 include "script/php/users_create_table.php";
+session_start();
 ?>
 <head>
 <title>The Closet Shopper - Login</title>
@@ -107,7 +108,6 @@ include "script/php/users_create_table.php";
             <tr>
             <td>
             <?php
-                session_start();
                if ($_SESSION['login_fail'])
                {
                  // if they've tried and failed to log in
@@ -166,7 +166,17 @@ include "script/php/users_create_table.php";
                 <div class="form-group">
                 <tr><td><button type="submit"id="Submit"class="btn btn-primary">REGISTER NEW ACCOUNT</button></td></tr>
                 </div>
-            </tr>    
+            </tr>
+            <tr>
+            <td>
+            <?php
+               if ($_SESSION['reg_fail'])
+               {
+                echo 'Email already registered, Please login';                 
+               }
+             ?>
+             <td>
+            </tr>
         </table>
         </form>
 

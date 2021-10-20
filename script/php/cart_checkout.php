@@ -27,7 +27,7 @@ if (isset($_POST['pass'])){
     //include 'email_comfirm.php';
     $to      = $username;
     $subject = 'Your Order is Confirmed!';
-    $message = 'Thank you for shopping with Closet Shoppers';
+    $message = 'Thank you for shopping with Closet Shoppers! Your order has been confirmed';
     $headers = 'From: f32ee@localhost' . "\r\n" .
         'Reply-To: f32ee@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();

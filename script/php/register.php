@@ -23,11 +23,14 @@ $sql = "INSERT INTO users (username, password,address)
 		VALUES ('$username', '$password','$address')";
 //	echo "<br>". $sql. "<br>";
 $result = $dbcnx->query($sql);
-
-if (!$result) 
-	echo "Invalid Email, try again";
-else
-	echo "Welcome ". $username . ". You are now registered, you will be redirected to login in 5 seconds";
-	header("refresh:5; url=../../login_signup.php");
-	
+session_start();
+if (!$result){
+	$_SESSION['reg_fail']= true;
+	header("refresh:0; url=../../login_signup.php");
+}
+else{
+	$_SESSION['valid_user']=$username;
+	echo "Welcome ". $username . ". You are now registered, you will be redirected to your profile page in 2 seconds";
+	header("refresh:2; url=../../profile_page.php");
+}
 ?>
