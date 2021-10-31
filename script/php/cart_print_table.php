@@ -46,11 +46,13 @@ foreach ($cart as $product_id => $qty) {
 if (isset($_POST['delete'])) {  //If user clicks "x" in item row
     $i = $_POST['delete'];
     foreach($_SESSION['cart'] as $product_id) {
-    // $key=array_search($i,$_SESSION['cart']);
-    unset($_SESSION['cart'][$i]);
+        if($product_id==$i){
+            $key=array_search($i,$_SESSION['cart']);
+            unset($_SESSION['cart'][$key]);
+        }
     }
     $_SESSION["cart"] = array_values($_SESSION["cart"]);
-    echo "<script type='text/javascript'> document.location = 'cart.php'; </script>"; //Redirect to cart.php
+    echo "<script type='text/javascript'> document.location = 'cart.php'; </script>";
 } 
 if (isset($_POST['add'])) {     //If user clicks "+" in item row
     $i = $_POST['add'];
