@@ -1,7 +1,7 @@
 <?php 
 include "script/php/categories_create_table.php";
 include "script/php/categories_display_product.php";
-session_start();
+session_start(); //Initialise session variables
 if (!isset($_SESSION['cart'])){
 	$_SESSION['cart'] = array();
 }
@@ -80,7 +80,6 @@ if (isset($_GET['buy'])) {
         </div>
     
         <!-- Left-aligned links (default) -->
-        <!-- <div class="topnav-left"> -->
         <a style="padding-left:50px;"href="about_us.html">ABOUT US</a>
         <div class="dropdown">
             <button class="dropbtn">SHOP ALL CATEGORIES</button>
@@ -89,7 +88,6 @@ if (isset($_GET['buy'])) {
             <a href="categories_bottoms.php">BOTTOMS</a>
             <a href="categories_bag.php">BAGS</a>
             </div>
-        <!-- </div> -->
         </div>
 
     

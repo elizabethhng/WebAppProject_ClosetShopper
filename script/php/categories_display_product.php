@@ -1,5 +1,5 @@
 <?php
-
+//This page diaplys the catalog of the respective pages for tops bottoms and bags.
 function print_table($category) {
     $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
 
@@ -13,7 +13,6 @@ function print_table($category) {
         // output data of each row
             $i=0;
             while($row = mysqli_fetch_assoc($result)) {
-                // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
                 if($i==0){echo "<tr>"; $i=3;}
                     echo "<td  style='vertical-align: top;'><table>";
                     echo '<div class="container">';

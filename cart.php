@@ -89,7 +89,6 @@ include "script/php/categories_display_product.php";
         </div>
     
         <!-- Left-aligned links (default) -->
-        <!-- <div class="topnav-left"> -->
         <a style="padding-left:50px;"href="about_us.html">ABOUT US</a>
         <div class="dropdown">
             <button class="dropbtn">SHOP ALL CATEGORIES</button>
@@ -98,7 +97,6 @@ include "script/php/categories_display_product.php";
             <a href="categories_bottoms.php">BOTTOMS</a>
             <a href="categories_bag.php">BAGS</a>
             </div>
-        <!-- </div> -->
         </div>
 
         <!-- Right-aligned links -->
@@ -110,15 +108,16 @@ include "script/php/categories_display_product.php";
     </div>
 
     <div class="content">
+        <!-- breadcrumb navigation bar -->
         <ul class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
                 <li>Cart</li>
                 <hr style="margin-top:5px;">
         </ul>
         <h1>SHOPPING CART</h1>
+        <!-- Display cart table -->
         <div id="orders">
-        <!--<form action="script/php/cart_checkout.php" method=POST>-->
-            <table class="cart" id="orderTable">
+            <table class="cart" id="orderTable"> 
                 <colgroup>
                     <col span="1" style="width: 5%;">
                     <col span="1" style="width: 10%;">
@@ -151,31 +150,27 @@ include "script/php/categories_display_product.php";
         </div>
         
     </div>
-<!-- <form action="script/php/cart_checkout.php" method=POST>
-<button id="updatecart" name="updatecart" >UPDATE CART</button>
-</form> -->
 
-<!-- The Modal -->
+<!-- The Modal, used for pop up window upon checkout. It is used to control payment outcome-->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <div class="modal-header">
-    <!-- <span class="close">&times;</span> -->
     <strong>PAYMENT STATUS</strong>
     </div>
     <div class="modal-body">
         <?php 
             Session_start();
-            if(!isset($_SESSION['valid_user'])){
-                echo "Please <a href=login_signup.php> Register/Login!</a>";
-            }elseif (!isset($_SESSION['cart'])){
+            if (empty($_SESSION['cart'])){ //If cart empty
                 echo "Cart is empty! Unable to Proceed";
-            }else{
+            }elseif(!isset($_SESSION['valid_user'])){ //If not logged in, link to login_register.php
+                echo "Please <a href=login_signup.php> Register/Login!</a>";
+            }else{                               //Display option to decide payment outcome
                 echo "Thank you for shopping with us! Please select the payment status!";
             }
         ?>
     </div>
+    <!-- Display payment outcome options (buttons) -->
     <div class="modal-footer">
     <form action="script/php/cart_checkout.php" method=POST>
       <button class="grey_button" id="fail" type="submit" name="fail" 
@@ -185,7 +180,6 @@ include "script/php/categories_display_product.php";
     </form>
     </div>
   </div>
-  
 </div>
 
     <footer>
@@ -199,15 +193,17 @@ include "script/php/categories_display_product.php";
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
+
+<!-- Call script for Announcement Banner -->
 <script type="text/javascript" src="script/javascript/slide_show.js"></script>
+<script>banner_showSlides();</script>
+
+<!--Relevant Javacript for popup window event handler  -->
 <script>
-    banner_showSlides();
     // Get the modal
     var modal = document.getElementById("myModal");
     // Get the button that opens the modal
     var btn = document.getElementById("checkout");
-    // Get the <span> element that closes the modal
-    var close = document.getElementsByClassName("close")[0];
 
     // When the user clicks the button, open the modal 
     btn.onclick = function() {

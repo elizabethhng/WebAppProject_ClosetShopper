@@ -32,7 +32,6 @@ include "script/php/cart_create_table.php";
         </div>
     
         <!-- Left-aligned links (default) -->
-        <!-- <div class="topnav-left"> -->
         <a style="padding-left:50px;"href="about_us.html">ABOUT US</a>
         <div class="dropdown">
             <button class="dropbtn">SHOP ALL CATEGORIES</button>
@@ -41,7 +40,6 @@ include "script/php/cart_create_table.php";
             <a href="categories_bottoms.php">BOTTOMS</a>
             <a href="categories_bag.php">BAGS</a>
             </div>
-        <!-- </div> -->
         </div>
 
     
@@ -54,6 +52,7 @@ include "script/php/cart_create_table.php";
     </div>
 
     <div class="content" style="padding: 0%;">
+    <!-- Main Slideshow -->
         <div class="slideshow-container">
             <div class="mySlides fade">
             <img src="media/slideshow/2.png" style="width:100%">
@@ -74,6 +73,7 @@ include "script/php/cart_create_table.php";
             <span class="dot"></span>
             <span class="dot"></span> 
         </div>
+        <!-- Display of category pages -->
         <table class='homepage'>
             <tr>
                 <td><a href="categories_top.php"><img src="media/slideshow/top.png"></a></td>
@@ -100,6 +100,7 @@ include "script/php/cart_create_table.php";
     </footer>
 </div>
 
+<!-- Call script for Announcement Banner -->
 <script type="text/javascript" src="script/javascript/slide_show.js"></script>
 <script>
     showSlides();

@@ -1,37 +1,39 @@
 <?php // register.php
 include "dbconnect.php";
-if (isset($_POST['submit'])) {
-	if (empty($_POST['username']) || empty ($_POST['password'])
-		|| empty ($_POST['password2']) || empty ($_POST['address'])) {
-	echo "All records to be filled in";
-	exit;}
-	}
+// if (isset($_POST['submit'])) {
+// 	if (empty($_POST['username']) || empty ($_POST['password'])
+// 		|| empty ($_POST['password2']) || empty ($_POST['address'])) {
+// 	echo "All records to be filled in";
+// 	exit;}
+// 	}
+
+//store variables from register form
 $username = $_POST['username'];
 $password = $_POST['password'];
 $password2 = $_POST['password2'];
 $address = $_POST['address'];
 
 
-// echo ("$username" . "<br />". "$password2" . "<br />");
 if ($password != $password2) {
 	echo "Sorry passwords do not match";
 	exit;
 	}
-$password = md5($password);
-// echo $password;
+
+$password = md5($password); //hash password
+
 $sql = "INSERT INTO users (username, password,address) 
-		VALUES ('$username', '$password','$address')";
-//	echo "<br>". $sql. "<br>";
+		VALUES ('$username', '$password','$address')"; //insert new account details
 $result = $dbcnx->query($sql);
+
 session_start();
-if (!$result){
-	$_SESSION['reg_fail']= true;
+if (!$result){ //If insert fail due to duplicate username
+	$_SESSION['reg_fail']= true; //display error message
 	header("refresh:0; url=../../login_signup.php");
 }
-else{
+else{ //if account created successfully, login the user
 	$_SESSION['valid_user']=$username;
 	$_SESSION['address']=$address;
-	if(isset($_SESSION['cart'])){
+	if(isset($_SESSION['cart'])){ //if user added items to cart before registration, redirect back to cart
 		$message= "Welcome <b>". $username . "</b>. You are now registered.<br> Please Proceed With Checkout";
 		header("refresh:2; url=../../cart.php");
 	}
@@ -61,7 +63,7 @@ else{
 
         <!-- Centered link -->
         <div class="topnav-centered" style= "height:75px;">
-            <a href="index.php"><img src="../../media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
+            <a href="../../index.php"><img src="../../media\logo.png" width="260px" height="28px" alt="logo" style="float:center;" ></a>
         </div>
     
     </div>
@@ -71,8 +73,9 @@ else{
                 <hr style="margin-top:5px;">
         </ul>
 
-        <h1><strong>Payment Status</strong></h1>
-        <h1 style= "font-weight: normal;"><?php echo $message?> </h1>
+        <h1><strong>Registration status</strong></h1>
+        <!-- display message -->
+        <h1 style= "font-weight: normal;"><?php echo $message?> </h1> 
 
     </div>
 

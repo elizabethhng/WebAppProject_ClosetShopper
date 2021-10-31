@@ -1,4 +1,5 @@
 <?php
+//Logout button clicked, destroy session.
   session_start();
   
   // store to test if they *were* logged in

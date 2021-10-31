@@ -1,4 +1,5 @@
 <?php
+//Query prices, names, and images for respective product_id
 function insert_price($id) {
 	$conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee");
 

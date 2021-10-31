@@ -106,13 +106,14 @@
         <h1>Profile Page</h1>
         <!-- user information -->
         <div id="userDetails">
- 
-            <h3><b>User Email:</b> <?php echo $_SESSION['valid_user'] ?></h3>
+            <h3><b>User Email:</b> <?php echo $_SESSION['valid_user'] ?></h3> 
             <h3><b>Shipping Address:</b> <?php echo $_SESSION['address'] ?></h3>
         </div>
+
         <!-- Logout Button -->
         <form action="script/php/logout.php" method=POST>
         <button id="logout" type="submit" >LOGOUT</button></form>
+
         <!-- Order table -->
         <div id="orders">
         <table id="orderTable">
@@ -173,6 +174,7 @@
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
+<!-- Call script for Announcement Banner -->
 <script type="text/javascript" src="script/javascript/slide_show.js"></script>
 <script>banner_showSlides();</script>
 </body>

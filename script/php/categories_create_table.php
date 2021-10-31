@@ -1,4 +1,5 @@
 <?php
+//This file creates tables all_products and initialises all inventory
 $servername = "localhost";
 $username = "f32ee";
 $password = "f32ee";

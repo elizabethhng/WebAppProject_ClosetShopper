@@ -78,7 +78,6 @@ session_start();
 
     <div class="content">
         <hr>
-
         <form action="script/php/login.php" method=POST>
         <table id = "signin_form">
             <tr><th><h2>SIGN IN</h2><br></th></tr>
@@ -110,9 +109,8 @@ session_start();
             <?php
                if ($_SESSION['login_fail'])
                {
-                 // if they've tried and failed to log in
-                 echo 'Invalid Email/Password.';
-                 
+                 // if they've tried and failed to log in, display error message
+                 echo 'Invalid Email/Password.';  
                }
              ?>
              <td>
@@ -128,8 +126,7 @@ session_start();
                 <th><label>EMAIL ADDRESS &ast;<br></label></th>
              </tr>
              <tr><td>
-                <input type="email" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "All communication will be sent to this address."><br><br>
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="email" name="username" size=40 required placeholder = "All communication will be sent to this address."><br><br>
                 </td></tr>
             </div>    
             
@@ -138,8 +135,7 @@ session_start();
                  <th><label>PASSWORD &ast;<br></label></th>
              </tr>
              <tr><td>
-                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>"size=40 required placeholder = "Please enter a password"><br><br>
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    <input type="password" name="password" class="form-control " size=40 required placeholder = "Please enter a password"><br><br>
                  </td></tr>
             </div>
             
@@ -148,8 +144,7 @@ session_start();
                 <th><label>CONFIRM PASSWORD &ast;<br></label></th>
              </tr>
              <tr><td>    
-                    <input type="password" name="password2" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>" size="40"><br><br>
-                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                    <input type="password" name="password2" class="form-control" size="40"><br><br>
                 </td></tr>
             </div>
 
@@ -158,8 +153,7 @@ session_start();
                 <th><label>SHIPPING ADDRESS &ast;<br></label></th>
              </tr>
              <tr><td>
-                <input type="text" name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $address; ?>" size=40 required placeholder = "Enter your delivery address."><br><br>
-                <span class="invalid-feedback"><?php echo $address_err; ?></span>
+                <input type="text" name="address" class="form-control"  size=40 required placeholder = "Enter your delivery address."><br><br>
                 </td></tr>
             </div>
             <tr>
@@ -172,17 +166,13 @@ session_start();
             <?php
                if ($_SESSION['reg_fail'])
                {
-                echo 'Email already registered, Please login';                 
+                echo 'Email already registered, Please login';         //If email registration fail        
                }
              ?>
              <td>
             </tr>
         </table>
         </form>
-
-
-
-
     </div>
 
     <footer>
@@ -196,6 +186,7 @@ session_start();
         <p style ="text-align: center; font-size: xx-small; padding-bottom: 5px; margin-top: 5px;" ><i> &copy;Copyright CLOSET SHOPPER  2021 All Rights Reserved</i></p>
     </footer>
 </div>
+<!-- Call script for Announcement Banner -->
 <script type="text/javascript" src="script/javascript/slide_show.js"></script>
 <script>banner_showSlides();</script>
 </body>

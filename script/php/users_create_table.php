@@ -32,10 +32,6 @@ if (!mysqli_query($conn, $sql)) {
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-/*$priv = "GRANT ALL PRIVILEGES ON f32ee.* TO f32ee@f32ee;";
-mysqli_query($conn, $priv);
-$priv = "FLUSH PRIVILEGES;";
-mysqli_query($conn, $priv);*/
 
 //Add some tables to the database [image is not included]
 $sql = "CREATE TABLE IF NOT EXISTS all_orders (
@@ -46,7 +42,6 @@ order_itemstr VARCHAR(255) NOT NULL,
 order_totprice DOUBLE NOT NULL,
 order_status ENUM('Paid','Cancelled') NOT NULL
 )AUTO_INCREMENT=10001";
-// $sql .= "ALTER TABLE Persons AUTO_INCREMENT=100;";
 
 if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);

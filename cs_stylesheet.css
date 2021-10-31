@@ -1,7 +1,12 @@
 body { font-family: "Roboto";
     margin:0px;
 }
-
+#wrapper { 
+    background-color:#ffffff;
+    min-width:905px;
+    width:100%;
+} 
+/* Main text */
 h1{
   font-size: 20px;
   width: 100%;
@@ -25,6 +30,7 @@ p{
   font-size: 12px;
 }
 
+/* Announcement Banner */
 #banner { 
     background-color:#ACACAC;
     min-width:905px;
@@ -32,13 +38,6 @@ p{
     float:top;
     text-align: center;
     margin-top: 0px;
-} 
-
-
-#wrapper { 
-    background-color:#ffffff;
-    min-width:905px;
-    width:100%;
 } 
 
 button {
@@ -52,6 +51,7 @@ button {
   font-family: "Roboto";
   
 }
+/* Light grey buttons */
 .grey_button{
   background-color: #E5E5E5;
   color:#333;
@@ -67,6 +67,7 @@ button:hover{
   color:#555555 ;
 }
 
+/* footer */
 footer{background-color: #ECCBBA;
       color: #555555; 
       width: 100%;
@@ -101,7 +102,6 @@ footer li a {
 
 /*Content Box */
 .content {padding: 10px 20px 30px 20px; min-width:905px;} 
-/* .content {padding: 20px 20px 20px 20px;}   */
 .content table{padding: 20px 20px 20px 20px ; margin:auto;}
 
 /* Navigation Bar */
@@ -207,8 +207,6 @@ ul.breadcrumb {
   margin-top: 5px;
   font-size: 12px;
   text-transform: uppercase;
-
-  /* background-color: #b3b3b3; */
 }
 /* Display list items side by side */
 ul.breadcrumb li {
