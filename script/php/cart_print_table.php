@@ -3,6 +3,7 @@
 Session_start();
 $c = $_SESSION['cart'];
 $cart=array_count_values($c);   //retrieves product id and respective quantities in user's cart within the session
+ksort($cart);
 
 include "script/php/fetch_product_details.php"; //include script to retrieve product details
 

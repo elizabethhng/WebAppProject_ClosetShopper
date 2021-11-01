@@ -3,6 +3,7 @@
 // Upon checkout, totalled prices are calculated and actions will be taken depending on payment ; successful OR unsuccessful
 Session_start();
 $cart=array_count_values($_SESSION['cart']);      //retrieves product id and respective quantities in user's cart within the session
+ksort($cart);
 $ordered_items=serialize($cart);                  //serialize array to store in SQL as a field
 $conn = mysqli_connect("localhost", "f32ee", "f32ee", "f32ee"); 
 if (!$conn) {
