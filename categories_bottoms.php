@@ -14,7 +14,7 @@ if (isset($_GET['buy'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>The Closet Shopper - BOTTOMS</title>
+<title>The Closet Shopper - Bottoms</title>
 <meta charset="utf-8">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto' >
 <link rel="stylesheet" href="script/css/cs_stylesheet_category.css">

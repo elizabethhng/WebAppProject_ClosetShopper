@@ -87,8 +87,7 @@ session_start();
             </tr>
             <tr>
                 <td>
-                    <input type="email" name="userid"  class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" size=40 required placeholder = "Enter your registered email address."><br><br>
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                    <input type="email" name="userid"  class="form-control" size=40 required placeholder = "Enter your registered email address."><br><br>
                 </td>
             </tr>
             </div>
@@ -98,8 +97,7 @@ session_start();
             </tr>
             <tr>
                 <td>
-                <input type="password" size=40 placeholder="Enter your password"  name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required></td>
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                <input type="password" size=40 placeholder="Enter your password"  minlength="6" maxlength="20" name="password" class="form-control" required></td>
             </tr>
             </div>
             <div class="form-group">
@@ -135,7 +133,7 @@ session_start();
                  <th><label>PASSWORD &ast;<br></label></th>
              </tr>
              <tr><td>
-                    <input type="password" name="password" class="form-control " size=40 required placeholder = "Please enter a password"><br><br>
+                    <input type="password" name="password" class="form-control " minlength="6" maxlength="20" size=40 required placeholder = "Please enter a password"><br><br>
                  </td></tr>
             </div>
             
@@ -144,7 +142,7 @@ session_start();
                 <th><label>CONFIRM PASSWORD &ast;<br></label></th>
              </tr>
              <tr><td>    
-                    <input type="password" name="password2" class="form-control" size="40"><br><br>
+                    <input type="password" name="password2"  minlength="6" maxlength="20" class="form-control" size="40"><br><br>
                 </td></tr>
             </div>
 
